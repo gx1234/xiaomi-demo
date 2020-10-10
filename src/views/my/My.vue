@@ -1,13 +1,17 @@
 <template>
-    <div>个人</div>
+  <div class="My">
+    <message>
+
+    </message>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "My"
-    }
+import Message from "./message/Message";
+export default {
+  name: "My",
+    components: { Message }
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
