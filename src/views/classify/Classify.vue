@@ -1,7 +1,12 @@
 <template>
-    <div>分类
-    <h1>haha</h1>
+    <div class="classify">
+        <div class="header">
+            <span class="iconfont .icon-fanhui"></span>
+            分类
+            <span class="iconfont .icon-search"></span>
+        </div>
     </div>
+
 </template>
 
 <script>
@@ -11,5 +16,13 @@
 </script>
 
 <style scoped>
-
+.classify{
+    width: 100%;
+}
+    .header{
+        width: 100%;
+        height: 0.85rem;
+        display: flex;
+        justify-content: space-around;
+    }
 </style>
