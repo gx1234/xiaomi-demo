@@ -1,5 +1,7 @@
 <template>
-    <div>分类</div>
+    <div>分类
+    <h1>haha</h1>
+    </div>
 </template>
 
 <script>
