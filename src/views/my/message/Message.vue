@@ -32,7 +32,7 @@
           <p class="p2">></p>
         </div>
       </div>
-      <div class="txt1">
+      <div class="txt1" @click="fn">
         <div class="t-l">
           <span class="iconfont icon-dizhi"></span>
         </div>
@@ -89,7 +89,12 @@
 
 <script>
 export default {
-  name: "Message"
+  name: "Message",
+  methods:{
+      fn(){
+        this.$router.push({path:'/site'})
+      }
+  }
 };
 </script>
 

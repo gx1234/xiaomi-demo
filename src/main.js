@@ -4,8 +4,9 @@ import router from "./router";
 import store from "./store";
 import "./assets/js/rem";
 import "./assets/css/reset.css";
-import axios from "axios";
 import Vant from "vant";
+
+import 'vant/lib/index.css'
 Vue.config.productionTip = false;
 import "./assets/font_2118804_a2ita7rodae/iconfont.css";
 Vue.use(Vant);
@@ -15,6 +16,5 @@ Vue.use(LyTab);
 new Vue({
   router,
   store,
-  axios,
   render: h => h(App)
 }).$mount("#app");
