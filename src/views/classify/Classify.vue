@@ -19,24 +19,28 @@
         </ul>
       </div>
       <div class="c-right" ref="rightli">
-        <div v-for="(item, index) in arr" :key="index">
-          <div class="img">
-            <img :src="item.info[0].title_img" alt="" />
-          </div>
-          <div class="box">
-            <div class="niu">
-              <p class="ones"></p>
-              <span class="head">{{ item.info[0].title }}</span>
-              <p class="ones"></p>
+        <div>
+          <div v-for="(item,index) in arr" :key="index" class="c-r-content right-item">
+            <div class="img" v-for="(item1,index) in item.info" :key="index">
+              <img :src="item1.title_img" alt="" />
+              <div class="box">
+                <div class="niu">
+                  <p class="ones"></p>
+                  <span class="head">{{ item1.title }}</span>
+                  <p class="ones"></p>
+                </div>
+                <ul class="c-r-button">
+                  <li v-for="(item2,index) in item1.list" :key="index">
+                    <img :src="item2.img" />
+                    <p>{{ item2.name }}</p>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <ul class="c-r-button">
-              <li v-for="(item, index) in arr" :key="index">
-                <img :src="item.info[0].list[0].img" />
-                <p>{{ item.info[0].list[0].name }}</p>
-              </li>
-            </ul>
+
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -56,7 +60,7 @@ export default {
   },
   methods: {
     leftArr() {
-      this.$axios.get("js/data.json").then(res => {
+      this.$axios.get("data/data.json").then(res => {
         console.log(res);
         this.arr = res.data;
       });
@@ -95,11 +99,11 @@ export default {
     _leftMove(i) {
       let leftlis = this.$refs.Menu.getElementsByTagName("li");
       let el = leftlis[i];
-      this.leftBSroll.scrollToElement(el, 300);
+      this.leftBSroll.scrollToElement(el, 500);
     },
     clickItem(i) {
       this.scrollY = this.rightTops[i];
-      this.rightBcroll.scrollTo(0, -this.scrollY, 300);
+      this.rightBcroll.scrollTo(0, -this.scrollY, 500);
     }
   },
   created() {
