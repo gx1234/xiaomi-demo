@@ -90,10 +90,10 @@
 <script>
 export default {
   name: "Message",
-  methods:{
-      fn(){
-        this.$router.push({path:'/site'})
-      }
+  methods: {
+    fn() {
+      this.$router.push({ path: "/site" });
+    }
   }
 };
 </script>

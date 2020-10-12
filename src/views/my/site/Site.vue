@@ -6,6 +6,7 @@
       <span class="iconfont icon-search" id="span"></span>
     </header>
     <div
+      ref="div"
       class="concent"
       v-for="(item, index) in siteData"
       :msg="item"
@@ -16,7 +17,7 @@
           <span>{{ item.name }}</span>
         </p>
         <p>{{ item.phone }}</p>
-        <p>删除</p>
+        <p @click="deleteFn(index)">删除</p>
       </div>
       <div class="c-b">
         <div class="c-bl">
@@ -49,17 +50,20 @@ export default {
     fn() {
       siteData().then(res => {
         this.siteData = res;
-        console.log(this.$route.query.search)
-        if (this.$route.query.search==undefined) {
-          console.log()
-        }else{
+        console.log(this.$route.query.search);
+        if (this.$route.query.search == undefined) {
+          console.log();
+        } else {
           this.siteData.push(this.$route.query.search);
         }
-        console.log(this.siteData)
+        console.log(this.siteData);
       });
     },
     go() {
       this.$router.push({ path: "/siteData" });
+    },
+    deleteFn(index) {
+      this.siteData.splice(index,1);
     }
   },
   created() {
