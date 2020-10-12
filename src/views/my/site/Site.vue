@@ -17,7 +17,7 @@
           <span>{{ item.name }}</span>
         </p>
         <p>{{ item.phone }}</p>
-        <p @click="deleteFn(index)">删除</p>
+        <p @click="deleteFn">删除</p>
       </div>
       <div class="c-b">
         <div class="c-bl">
@@ -50,20 +50,21 @@ export default {
     fn() {
       siteData().then(res => {
         this.siteData = res;
-        console.log(this.$route.query.search);
-        if (this.$route.query.search == undefined) {
-          console.log();
+        if (JSON.parse(sessionStorage.getItem("arr")) == null) {
+          alert()
         } else {
-          this.siteData.push(this.$route.query.search);
+          this.siteData.push(JSON.parse(sessionStorage.getItem("arr"))[0]);
+          console.log(this.siteData)
         }
-        console.log(this.siteData);
       });
     },
+
     go() {
       this.$router.push({ path: "/siteData" });
     },
-    deleteFn(index) {
-      this.siteData.splice(index,1);
+    deleteFn() {
+      this.fn()
+      sessionStorage.removeItem("arr");
     }
   },
   created() {

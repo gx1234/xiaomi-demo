@@ -30,7 +30,8 @@ export default {
         phone: "",
         address_info: "",
         address_region: ""
-      }
+      },
+      arr: []
     };
   },
   methods: {
@@ -40,7 +41,10 @@ export default {
       this.newsite.phone = val.tel;
       this.newsite.address_info = val.addressDetail;
       this.newsite.address_region = val.city + val.county;
-      this.$router.push({ path: "/site", query: { search: this.newsite } });
+      this.$router.push({ path: "/site" });
+      this.arr = JSON.parse(sessionStorage.getItem("arr")) || [];
+      this.arr.push(this.newsite);
+      sessionStorage.setItem("arr", JSON.stringify(this.arr));
     },
     onDelete() {
       Toast("delete");
@@ -57,7 +61,7 @@ export default {
         this.searchResult = [];
       }
     },
-    exit(){
+    exit() {
       this.$router.push({ path: "/site" });
     }
   }
