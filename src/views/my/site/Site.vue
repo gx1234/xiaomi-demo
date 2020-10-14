@@ -51,14 +51,13 @@ export default {
       siteData().then(res => {
         this.siteData = res;
         if (JSON.parse(sessionStorage.getItem("arr")) == null) {
-          alert()
+          console.log()
         } else {
           this.siteData.push(JSON.parse(sessionStorage.getItem("arr"))[0]);
           console.log(this.siteData)
         }
       });
     },
-
     go() {
       this.$router.push({ path: "/siteData" });
     },
