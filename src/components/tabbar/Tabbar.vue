@@ -21,7 +21,7 @@ export default {
       make: 0,
       tabbarArr: [
         {
-          path: "/home",
+          path: "/",
           title: "首页",
           iconfont: "iconfont icon-shouye"
         },

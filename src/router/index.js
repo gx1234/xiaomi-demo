@@ -4,11 +4,13 @@ import Home from "../views/home/Home.vue";
 import My from "../views/my/My";
 import Shopping from "../views/shopping/Shopping";
 import Classify from "../views/classify/Classify";
+import MyDetails from "../components/details/mydetails";
+
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/home",
+    path: "/",
     name: "Home",
     component: Home
   },
@@ -24,6 +26,10 @@ const routes = [
     path: "/classify",
     component: Classify,
   },
+  {
+    path: "/mydetails",
+    component: MyDetails
+  }
 ];
 
 const router = new VueRouter({
