@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
+    "better-scroll": "^2.0.4",
     "core-js": "^3.6.5",
     "ly-tab": "^2.1.2",
     "swiper": "^6.3.3",

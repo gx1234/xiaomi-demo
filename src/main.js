@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import "./assets/js/rem";
 import "./assets/css/reset.css";
+
 import Vant from "vant";
 
 import 'vant/lib/index.css'
@@ -17,11 +18,9 @@ Vue.use(LyTab);
 new Vue({
   router,
   store,
-
   created(){
     this.$store.commit('onrefresh','start')
   },
-  axios,
 
   render: h => h(App)
 }).$mount("#app");
