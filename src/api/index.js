@@ -1,3 +1,4 @@
+
 import $http from "./request";
 
 export const homeimg = () =>{
@@ -6,4 +7,8 @@ export const homeimg = () =>{
 
 export const  homedata =() =>{
   return $http("/data/homeGoods.json")
+
+export const siteData=()=>{
+    return $http('/data/address.json')
+
 }

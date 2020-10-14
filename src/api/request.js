@@ -4,13 +4,12 @@ import axios from "axios";
 //基础配置
 // axios.defaults.baseURL = "../../data";
 axios.defaults.timeout = 100000;
-
+//
 // function abc() {
 //   return axios.get("/api/homecasual");
 // }
 // console.log(abc);
-// //网络请求的拦截器
-// //请求拦截器
+
 axios.interceptors.request.use(
   function(config) {
     return config;
