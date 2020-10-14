@@ -4,8 +4,13 @@
       <ul>
         <li v-for="(item, index) in tabbarArr" :key="index" @click="fn(index)">
           <router-link :to="item.path">
-            <span :class="item.iconfont" :style="make==index?{color:'cornflowerblue'}:{color:'#000'}"></span>
-            <p :class="make === index ? 'active' : ''" >{{ item.title }}</p>
+            <span
+              :class="item.iconfont"
+              :style="
+                make == index ? { color: 'cornflowerblue' } : { color: '#000' }
+              "
+            ></span>
+            <p :class="make === index ? 'active' : ''">{{ item.title }}</p>
           </router-link>
         </li>
       </ul>
@@ -21,7 +26,7 @@ export default {
       make: 0,
       tabbarArr: [
         {
-          path: "/home",
+          path: "/",
           title: "首页",
           iconfont: "iconfont icon-shouye"
         },
@@ -68,6 +73,7 @@ export default {
     position: fixed;
     left: 0;
     bottom: 0;
+    background: #ffffff;
     ul {
       display: flex;
       height: 0.88rem;

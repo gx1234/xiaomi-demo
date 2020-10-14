@@ -1,13 +1,32 @@
 <template>
   <div id="app">
-      <router-view />
-    <tabbar></tabbar>
+    <router-view />
+    <tabbar v-show="$route.meta.isShowTabbar"></tabbar>
   </div>
 </template>
 <script>
 import Tabbar from "./components/tabbar/Tabbar";
 export default {
-  components: { Tabbar }
+  components: { Tabbar },
+  beforeDestroy() {
+  },
+  destroyed(){
+    window.removeEventListener("beforeunload", e => {
+      this.beforeunloadHandler(e);
+    });
+  },
+  mounted() {
+    window.addEventListener("beforeunload", e => {
+      this.beforeunloadHandler(e);
+    });
+  },
+  methods:{
+    beforeunloadHandler(e) {
+        console.log(e)
+        this.$store.commit('onrefresh','end')
+      
+    }
+  }
 };
 </script>
 <style lang="less">
