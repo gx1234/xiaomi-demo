@@ -87,7 +87,7 @@ export default {
       this.$router.go(-1);
     },
     gohome() {
-      this.$router.push({ path: "/Home" });
+      this.$router.push({ path: "/" });
     },
     gettotil() {
       this.totil = 0;
