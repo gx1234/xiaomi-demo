@@ -57,7 +57,12 @@ export default new Vuex.Store({
       if(val==='end'){
         sessionStorage.setItem('msg',JSON.stringify(state.spct))
       }else if(val==='start'){
-        state.spct=JSON.parse(sessionStorage.getItem('msg'));
+        if(sessionStorage.getItem('msg')!="null"){
+          state.spct=JSON.parse(sessionStorage.getItem('msg'));
+        }else{
+          state.spct=[]
+        }
+
       }
     }
   },

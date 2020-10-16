@@ -61,8 +61,7 @@ export default {
   methods: {
     leftArr() {
       this.$axios.get("data/data.json").then(res => {
-        console.log(res);
-        this.arr = res.data;
+        this.arr = res
       });
     },
     _initBscroll() {

@@ -47,7 +47,8 @@ const routes = [
 
     path: "/mydetails",
     component: MyDetails
-
+  },
+  {
     path: "/site",
     component: Site
   },
