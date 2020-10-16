@@ -15,7 +15,7 @@
       </div>
       <div class="commodity" v-else>
         <ul>
-          <li v-for="(item, index) in msgs" :key="index">
+          <li v-for="(item, index) in msgs" :key="index" style="margin-top:0.2rem">
             <div class="left">
               <img :src="item.img" alt="" />
             </div>
